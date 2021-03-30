@@ -26,5 +26,23 @@ stage('Clean') {
 	bat "dotnet clean ${workspace}\\JWT.sln"
   }
 }
+
+stage('Build'){
+   steps{
+      bat "dotnet build ${workspace}\\JWT.sln --configuration Release"
+    }
+ }
+
+stage('Test: Unit Test'){
+   steps {
+     	bat "dotnet test ${workspace}\\XUnitTestProject1\\XUnitTestProject1.csproj"
+     }
+  }
+
+stage('Publish'){
+     steps{
+       bat "dotnet publish ${workspace}\\JWT.sln"
+     }
+}
 	}
 }
