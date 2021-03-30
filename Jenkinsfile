@@ -14,5 +14,11 @@ pipeline {
 			  git branch: 'main', credentialsId: 'jenkins-user-for-github-repository', url: 'https://github.com/prosto-nevezu4iy/JWT.git'
 			}
 		}
+
+stage('Restore packages') {
+  steps {
+    bat "dotnet restore ${workspace}\\JWT\\JWT.sln"
+  }
+}
 	}
 }
