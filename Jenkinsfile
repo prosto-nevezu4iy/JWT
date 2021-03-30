@@ -17,7 +17,7 @@ pipeline {
 
 stage('Restore packages') {
   steps {
-    bat "dotnet restore ${workspace}\\JWT\\JWT.sln"
+    bat "dotnet restore ${workspace}\JWT\JWT.sln"
   }
 }
 	}
